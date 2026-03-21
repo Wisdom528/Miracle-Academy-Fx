@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Miracle Fx Academy Payment</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* GLOBAL STYLES */
+* {box-sizing:border-box;}
+body {background:#f5f7fb;color:#1e293b;font-family:'Poppins',sans-serif;padding:20px;}
+
+/* CONTAINER */
+.container {max-width:520px;margin:auto;text-align:center;}
+
+/* LOGO */
+.logo {display:flex;justify-content:center;align-items:center;gap:10px;margin-bottom:30px;}
+.logo img {height:50px;border-radius:8px;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+.logo span {font-weight:700;font-size:22px;color:#1e3a8a;}
+
+/* TIMER */
+.timer-box {padding:18px;border-radius:16px;background:white;border:1px solid #e2e8f0;margin-bottom:25px;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
+.timer-box h3 {font-size:15px;color:#16a34a;margin-bottom:6px;font-weight:600;}
+#timer {font-size:28px;font-weight:bold;color:#16a34a;}
+
+/* COURSE INFO */
+.course-box {background:white;padding:22px;border-radius:18px;margin-bottom:25px;border:1px solid #e2e8f0;box-shadow:0 8px 25px rgba(0,0,0,0.08);}
+.course-box h2 {margin-bottom:8px;font-size:20px;font-weight:700;color:#1e3a8a;}
+.price {font-size:26px;color:#3b82f6;font-weight:700;margin-top:8px;}
+
+/* ACCOUNT CARD */
+.card {background:white;border:1px solid #e2e8f0;padding:22px;border-radius:18px;margin-bottom:25px;box-shadow:0 10px 30px rgba(0,0,0,0.08);}
+.card h3 {font-size:16px;letter-spacing:1px;color:#16a34a;margin-bottom:14px;}
+.row {display:flex;justify-content:space-between;align-items:center;background:#f8fafc;padding:12px 14px;border-radius:12px;margin-bottom:12px;transition:0.3s;}
+.row span {font-size:14px;color:#0f172a;}
+.row:hover {background:#e2e8f0;}
+.copy-btn {background:#16a34a;color:white;border:none;padding:7px 16px;border-radius:25px;font-size:13px;font-weight:bold;cursor:pointer;transition:0.3s;}
+.copy-btn:hover {background:#22c55e;}
+
+/* CONFIRM BUTTON */
+.btn {margin-top:30px;width:100%;background:linear-gradient(135deg,#16a34a,#22c55e);color:white;padding:16px;border-radius:35px;font-weight:bold;font-size:1.1rem;cursor:pointer;border:none;transition:0.3s;box-shadow:0 8px 25px rgba(0,0,0,0.15);}
+.btn:hover {transform:translateY(-2px);box-shadow:0 12px 35px rgba(0,0,0,0.2);}
+
+/* RESPONSIVE */
+@media(max-width:480px){
+  .course-box h2, .card h3, .timer-box h3 {font-size:16px;}
+  .price, #timer {font-size:22px;}
+  .copy-btn {padding:6px 12px;font-size:12px;}
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- LOGO -->
+<div class="logo">
+<img src="./asset/image/Miracle Fx Logo.jpeg" alt="logo">
+<span>Miracle Fx Academy</span>
+</div>
+
+<!-- TIMER -->
+<div class="timer-box">
+<h3>Complete your payment within</h3>
+<div id="timer">10:00</div>
+</div>
+
+<!-- COURSE INFO -->
+<div class="course-box">
+<h2 id="courseName">Course Name</h2>
+<div class="price" id="coursePrice">$0</div>
+</div>
+
+<!-- PAYMENT DETAILS -->
+<div class="card">
+<h3>Bank Transfer Details</h3>
+<div class="row">
+<span>United Bank For Africa</span>
+<button class="copy-btn" onclick="copyText('United Bank For Africa')">Copy</button>
+</div>
+<div class="row">
+<span id="accountNumber">1026324640</span>
+<button class="copy-btn" onclick="copyText('1026324640')">Copy</button>
+</div>
+<div class="row">
+<span>Miracle Online Trading</span>
+<button class="copy-btn" onclick="copyText('Miracle Online Trading')">Copy</button>
+</div>
+</div>
+
+<!-- CONFIRM BUTTON -->
+<button class="btn" id="confirmBtn" onclick="confirmPayment()">✅ I have made the payment</button>
+
+</div>
+
+<script>
+// Get plan from URL
+const urlParams = new URLSearchParams(window.location.search);
+const plan = urlParams.get('plan');
+
+// Define plan details in USD
+const plans = {
+  beginner: {name:"Beginner Program", price:"50"},
+  intermediate: {name:"Intermediate Program", price:"100"},
+  advanced: {name:"Advanced Program", price:"200"}
+};
+
+// Set course details dynamically
+if(plan && plans[plan]){
+  document.getElementById("courseName").innerText = plans[plan].name;
+  document.getElementById("coursePrice").innerText = "$" + plans[plan].price;
+} else {
+  alert("No plan selected");
+  window.location.href="trading-programs.html";
+}
+
+// Copy function
+function copyText(text){
+  navigator.clipboard.writeText(text);
+  alert("Copied: " + text);
+}
+
+// Timer
+let time = 600; // 10 minutes
+const timerEl = document.getElementById("timer");
+const confirmBtn = document.getElementById("confirmBtn");
+const countdown = setInterval(()=>{
+  let minutes = Math.floor(time/60);
+  let seconds = time % 60;
+  timerEl.textContent = minutes + ":" + (seconds<10?"0":"") + seconds;
+  if(time <= 0){
+    clearInterval(countdown);
+    timerEl.textContent="Time Expired";
+    confirmBtn.disabled = true;
+    confirmBtn.style.background="#6b7280";
+    alert("Payment session expired");
+  }
+  time--;
+},1000);
+
+// Payment confirmation -> open WhatsApp with pre-filled message
+function confirmPayment(){
+  if(plan && plans[plan]){
+    const phone = "+2349065171696"; // Your WhatsApp number
+    const text = `Hello Coach, I have made payment for the ${plans[plan].name} ($${plans[plan].price}).`;
+    const url = `https://wa.me/${phone.replace(/\+/g,'')}?text=${encodeURIComponent(text)}`;
+    window.open(url, '_blank');
+  } else {
+    alert("Plan not selected");
+  }
+}
+</script>
+
+</body>
+</html>

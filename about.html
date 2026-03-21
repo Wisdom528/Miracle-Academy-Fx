@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About Us | Miracle Fx Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* GLOBAL STYLES */
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body {background: #f5f7fb;color: #0f172a;line-height:1.6;}
+a {text-decoration:none;color: inherit;}
+button {outline:none;cursor:pointer;}
+
+/* HEADER */
+header {display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:#1e3a8a;color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+.logo-area {display:flex;align-items:center;gap:10px;}
+.logo-area img {height:42px; border-radius:6px; box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+.logo-text span {display:block;font-weight:700;font-size:18px;}
+nav {position:relative;}
+.nav-btn {background:#fff;color:#1e3a8a;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,0.2);}
+.dropdown {display:none;position:absolute;right:0;background:#fff;border-radius:10px;box-shadow:0 15px 35px rgba(0,0,0,0.2);overflow:hidden;min-width:200px;}
+.dropdown a {display:block;padding:12px 20px;font-weight:600;color:#1e3a8a;}
+.dropdown a:hover {background:#f1f5f9;}
+.show {display:block;}
+
+/* HERO */
+.hero {padding:80px 8%;text-align:center;background:linear-gradient(to right,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;margin:20px 8%;box-shadow:0 15px 40px rgba(0,0,0,0.2);}
+.hero h2 {font-size:40px;margin-bottom:20px;text-shadow:0 3px 10px rgba(0,0,0,0.2);}
+.hero p {opacity:0.9;margin-bottom:30px;font-size:18px;}
+.hero button {padding:14px 28px;background:#fff;color:#1e3a8a;border:none;border-radius:10px;font-weight:700;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.15);}
+.hero button:hover {transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+
+/* ABOUT IMAGE CIRCLE */
+.about-image {width:180px;height:180px;border-radius:50%;overflow:hidden;margin:0 auto 20px auto;box-shadow:0 15px 35px rgba(0,0,0,0.25);}
+.about-image img {width:100%;height:100%;object-fit:cover;}
+
+/* ABOUT TEXT */
+.about-text {max-width:900px;margin:20px auto;font-size:17px;line-height:1.8;text-align:center;color:#475569;}
+.about-text p {margin-bottom:20px;}
+
+/* VALUES SECTION */
+.value {padding:60px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:25px;}
+.value-box {background:#fff;padding:30px;border-radius:20px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.15);transition:transform 0.5s, box-shadow 0.5s;transform-style: preserve-3d;cursor:pointer;}
+.value-box h3 {color:#1e3a8a;margin-bottom:15px;font-size:22px;}
+.value-box p {opacity:0.8;font-size:16px;}
+.value-box:hover {transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);box-shadow:0 35px 60px rgba(0,0,0,0.25);}
+
+/* FOOTER */
+footer {text-align:center;padding:25px;background:#1e3a8a;color:#fff;font-size:14px;box-shadow:0 -5px 15px rgba(0,0,0,0.1);margin-top:40px;}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+.hero h2 {font-size:28px;}
+.about-text {font-size:16px;}
+.value {grid-template-columns:1fr;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo-area">
+<img src="./asset/image/Miracle Fx Logo.png" alt="logo">
+<div class="logo-text">
+<span>Miracle Fx</span>
+<span>Academy</span>
+</div>
+</div>
+<nav>
+<button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
+<div class="dropdown" id="menu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="testimonials.html">Testimonials</a>
+<a href="#contact">Contact</a>
+</div>
+</nav>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+<h2>About Miracle Fx Academy</h2>
+<p>Your gateway to mastering Forex trading with professionalism and proven strategies.</p>
+<button onclick="window.location.href='index.html#plans'">View Programs</button>
+</section>
+
+<!-- ABOUT CONTENT -->
+<section class="about-text">
+<div class="about-image">
+<img src="./asset/image/Miracle Fx About.png" alt="Founder">
+</div>
+<p><strong>Miracle Fx Academy</strong> was founded with the vision of helping traders achieve consistent success in the Forex market. Our mission is to provide structured, easy-to-follow training that combines theory, practical strategies, and real market experience.</p>
+<p>Our founder, with years of trading experience, has created programs that cater to beginners, intermediates, and advanced traders. We emphasize risk management, market analysis, and trading psychology to ensure our students not only learn, but thrive.</p>
+<p>At Miracle Fx Academy, we believe education should be immersive, engaging, and results-driven. Join us and transform your trading journey today!</p>
+</section>
+
+<!-- VALUES / WHY CHOOSE US -->
+<section class="value">
+<div class="value-box">
+<h3>Expert Mentorship</h3>
+<p>Learn directly from experienced traders and receive personalized guidance.</p>
+</div>
+<div class="value-box">
+<h3>Proven Strategies</h3>
+<p>Follow tested and reliable trading methods that deliver real results.</p>
+</div>
+<div class="value-box">
+<h3>Community Support</h3>
+<p>Join a thriving community of traders to share knowledge, tips, and motivation.</p>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Miracle Fx Academy. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+ document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>
