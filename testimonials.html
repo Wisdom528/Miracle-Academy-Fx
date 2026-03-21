@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Testimonials | Miracle Fx Academy</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+body{background:#f8fafc;color:#0f172a;}
+
+/* HEADER */
+header{
+  background:#1e3a8a;
+  color:#fff;
+  padding:15px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.logo-area{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.logo-area img{height:40px;border-radius:6px;}
+
+.logo-text span{display:block;font-weight:700;}
+
+/* MENU */
+.nav-btn{
+  background:#fff;
+  color:#1e3a8a;
+  border:none;
+  padding:8px 15px;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:700;
+  transition:0.3s;
+}
+
+.nav-btn:hover{background:#e2e8f0;}
+
+.dropdown{
+  display:none;
+  position:absolute;
+  right:20px;
+  top:70px;
+  background:#fff;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  border-radius:12px;
+  overflow:hidden;
+  z-index:100;
+}
+
+.dropdown a{
+  display:block;
+  padding:12px 20px;
+  text-decoration:none;
+  color:#1e3a8a;
+  font-weight:600;
+  transition:0.3s;
+}
+
+.dropdown a:hover{background:#f1f5f9;}
+
+/* HERO TITLE */
+.container{padding:60px 8%;max-width:1200px;margin:auto;}
+.title{text-align:center;margin-bottom:50px;}
+.title h2{font-size:32px;color:#1e3a8a;letter-spacing:1px;}
+.title p{opacity:0.7;font-size:16px;}
+
+/* GRID */
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:30px;
+}
+
+/* TESTIMONIAL CARD */
+.testimonial{
+  background:#fff;
+  padding:20px;
+  border-radius:20px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.08);
+  transition:0.4s;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  text-align:center;
+  cursor:pointer;
+}
+.testimonial:hover{
+  transform:translateY(-8px) rotateX(2deg) rotateY(-2deg);
+  box-shadow:0 25px 50px rgba(0,0,0,0.15);
+}
+
+/* MEDIA */
+.media-top{
+  margin-bottom:15px;
+  width:130px;
+  height:130px;
+  border-radius:50%;
+  overflow:hidden;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  box-shadow:0 10px 25px rgba(0,0,0,0.2);
+}
+.media-top video,
+.media-top img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
+
+/* CONTENT */
+.content h3{color:#1e3a8a;margin-bottom:5px;font-size:18px;}
+.content span{font-size:13px;opacity:0.6;}
+.content p{margin-top:8px;font-size:14px;line-height:1.6;}
+
+/* PROFESSIONAL PROMPT FOR LAST VIDEO */
+.prompt{
+  font-size:13px;
+  opacity:0.7;
+  margin-top:6px;
+  font-style:italic;
+  color:#475569;
+}
+
+/* FOOTER */
+footer{
+  background:#1e3a8a;
+  color:#fff;
+  text-align:center;
+  padding:25px;
+  margin-top:50px;
+  border-radius:0 0 20px 20px;
+}
+
+/* MOBILE */
+@media(max-width:768px){
+  .grid{grid-template-columns:1fr; gap:25px;}
+  .testimonial{text-align:left; align-items:flex-start;}
+  .media-top{width:100px;height:100px;}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="logo-area">
+    <img src="./asset/image/Miracle Fx Logo.png" alt="logo">
+    <div class="logo-text">
+      <span>Miracle Fx</span>
+      <span>Academy</span>
+    </div>
+  </div>
+
+  <button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
+
+  <div class="dropdown" id="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="plans.html">Plans</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<div class="container">
+  <div class="title">
+    <h2>What Our Students Are Saying</h2>
+    <p>Real experiences from traders who transformed their financial journey with us.</p>
+  </div>
+
+  <div class="grid">
+
+    <!-- SARAH -->
+    <div class="testimonial">
+      <div class="media-top">
+        <video controls onclick="playOnlyThis(this)">
+          <source src="./asset/video/Miracle Fx Test 3.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content">
+        <h3>Sarah K.</h3>
+        <span>Intermediate Trader</span>
+        <p>The strategies taught here are on another level. I moved from guessing trades to understanding market structure.</p>
+      </div>
+    </div>
+
+    <!-- JOHN -->
+    <div class="testimonial">
+      <div class="media-top">
+        <img src="./asset/image/Miracle Fx Test 1.jpeg" alt="John D">
+      </div>
+      <div class="content">
+        <h3>John D.</h3>
+        <span>Beginner Student</span>
+        <p>Joining Miracle Fx Academy was the best decision I made this year.</p>
+      </div>
+    </div>
+
+    <!-- JANE -->
+    <div class="testimonial">
+      <div class="media-top">
+        <img src="./asset/image/Miracle Fx Text  2.jpeg" alt="Jane S">
+      </div>
+      <div class="content">
+        <h3>Jane S.</h3>
+        <span>Intermediate Trader</span>
+        <p>The courses are well-structured and improved my trading skills significantly.</p>
+      </div>
+    </div>
+
+    <!-- LAST VIDEO WITH PROMPT -->
+    <div class="testimonial">
+      <div class="media-top">
+        <video controls onclick="playOnlyThis(this)">
+          <source src="./asset/video/Miracle Fx Test 6.mp4" type="video/mp4">
+        </video>
+      </div>
+      <div class="content">
+        <h3>David L.</h3>
+        <span>Advanced Trader</span>
+        <p>This academy elevated my trading career. I now trade confidently and consistently profit.</p>
+        <div class="prompt">“Professional mentoring changed my approach and gave me real market insight.”</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<footer>
+  <p>© 2026 Miracle Fx Academy. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+
+// VIDEO AUDIO CONTROL
+function playOnlyThis(video){
+  const videos = document.querySelectorAll("video");
+  videos.forEach(v => {
+    if(v !== video){
+      v.pause();
+      v.currentTime = 0;
+    }
+  });
+  video.play();
+}
+</script>
+
+</body>
+</html>

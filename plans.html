@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Trading Programs | Miracle Fx Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body {background:#f8fafc;color:#0f172a;}
+
+/* HEADER */
+header {
+  background:#1e3a8a;color:#fff;padding:15px 20px;
+  display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  position:sticky;top:0;z-index:1000;
+}
+header img {height:35px;border-radius:6px;}
+.logo-text span {display:block;font-weight:700;}
+.nav-btn {background:#fff;color:#1e3a8a;padding:8px 16px;border:none;border-radius:8px;cursor:pointer;font-weight:700;transition:0.3s;}
+.nav-btn:hover {background:#e2e8f0;}
+.dropdown {
+  display:none;position:absolute;top:60px;right:20px;background:#fff;border-radius:10px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);overflow:hidden;min-width:180px;z-index:100;
+}
+.dropdown a {display:block;padding:10px 16px;text-decoration:none;color:#1e3a8a;font-weight:600;transition:0.3s;}
+.dropdown a:hover {background:#f1f5f9;}
+.show {display:block;}
+
+/* PAGE TITLE */
+h1 {
+  text-align:center;color:#1e3a8a;margin:40px 0;font-size:30px;letter-spacing:1px;
+}
+
+/* CONTAINER */
+.container {
+  max-width:1200px;margin:auto;padding:0 15px;
+  display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px;
+}
+
+/* CARD STYLING */
+.card {
+  background:#fff;border-radius:18px;overflow:hidden;
+  box-shadow:0 8px 20px rgba(0,0,0,0.08);transition:0.3s;
+  display:flex;flex-direction:column;cursor:pointer;
+}
+.card:hover {transform:translateY(-5px);box-shadow:0 18px 35px rgba(0,0,0,0.12);}
+.card img {width:100%;height:150px;object-fit:cover;}
+.card-header {
+  background:linear-gradient(to right,#1e3a8a,#3b82f6);color:#fff;
+  padding:15px 20px;display:flex;justify-content:space-between;align-items:center;
+}
+.card-header h3 {margin:0;font-size:18px;}
+.card-header .price {font-size:18px;font-weight:700;color:#22c55e;}
+.card-body {padding:15px;text-align:center;}
+.card-body p {margin-bottom:12px;color:#475569;font-size:14px;line-height:1.5;}
+.features {list-style:none;margin:12px 0;padding-left:0;text-align:left;}
+.features li {margin-bottom:6px;padding-left:20px;position:relative;font-size:13px;}
+.features li::before {content:"✔";position:absolute;left:0;color:#1e3a8a;font-weight:bold;font-size:14px;}
+.card button {
+  width:100%;padding:12px;background:#1e3a8a;color:#fff;border:none;border-radius:10px;
+  font-weight:700;font-size:14px;cursor:pointer;transition:0.3s;
+}
+.card button:hover {background:#2563eb;transform:translateY(-2px);}
+
+/* FOOTER */
+footer {background:#1e3a8a;color:#fff;text-align:center;padding:20px;margin-top:40px;font-size:14px;border-radius:0 0 18px 18px;}
+
+/* MOBILE */
+@media(max-width:768px){
+  h1 {font-size:24px;margin:30px 0;}
+  .container {grid-template-columns:1fr;gap:15px;}
+  .card img {height:140px;}
+  .card-header h3, .card-header .price {font-size:16px;}
+}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo-area" style="display:flex;align-items:center;gap:10px;">
+  <img src="./asset/image/Miracle Fx Logo.png" alt="logo">
+  <div class="logo-text">
+    <span>Miracle Fx</span>
+    <span>Academy</span>
+  </div>
+</div>
+<button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
+<div class="dropdown" id="menu">
+  <a href="#home">Home</a>
+  <a href="about.html">About</a>
+  <a href="services.html">Services</a>
+  <a href="testimonials.html">Testimonials</a>
+  <a href="#plans">Plans</a>
+  <a href="#contact">Contact</a>
+</div>
+</header>
+
+<h1>Choose Your Trading Program</h1>
+
+<div class="container">
+
+<!-- BEGINNER -->
+<div class="card">
+<img src="./asset/image/Miracle Fx beginner.png" alt="Beginner">
+<div class="card-header">
+<h3>Beginner</h3>
+<div class="price">$50</div>
+</div>
+<div class="card-body">
+<p>Start your Forex journey with a solid foundation designed for complete beginners.</p>
+<ul class="features">
+<li>Introduction to Forex market</li>
+<li>Basic trading strategies</li>
+<li>Risk management fundamentals</li>
+<li>Access to beginner community</li>
+</ul>
+<button onclick="location.href='payment.html?plan=beginner&price=50'">Register</button>
+</div>
+</div>
+
+<!-- INTERMEDIATE -->
+<div class="card">
+<img src="./asset/image/Miracle Fx Intermediate.png" alt="Intermediate">
+<div class="card-header">
+<h3>Intermediate</h3>
+<div class="price">$100</div>
+</div>
+<div class="card-body">
+<p>Upgrade your skills with proven strategies used by consistent traders.</p>
+<ul class="features">
+<li>Advanced trading setups</li>
+<li>Market structure analysis</li>
+<li>Live trading sessions</li>
+<li>Private mentorship group</li>
+</ul>
+<button onclick="location.href='payment.html?plan=intermediate&price=100'">Register</button>
+</div>
+</div>
+
+<!-- ADVANCED -->
+<div class="card">
+<img src="./asset/image/Miracle Fx Advance.png" alt="Advanced">
+<div class="card-header">
+<h3>Advanced</h3>
+<div class="price">$200</div>
+</div>
+<div class="card-body">
+<p>Master Forex trading with elite-level strategies and mentorship.</p>
+<ul class="features">
+<li>Institutional trading strategies</li>
+<li>1-on-1 mentorship</li>
+<li>Premium signals access</li>
+<li>Full trading system breakdown</li>
+</ul>
+<button onclick="location.href='payment.html?plan=advanced&price=200'">Register</button>
+</div>
+</div>
+
+</div>
+
+<footer>
+<p>© 2026 Miracle Fx Academy. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+</script>
+
+</body>
+</html>

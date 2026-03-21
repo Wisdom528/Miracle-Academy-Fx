@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Services | Miracle Fx Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+/* GLOBAL STYLES */
+* {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins', sans-serif;}
+body {background:#f8fafc; color:#0f172a;}
+
+/* HEADER */
+header {
+  background:#1e3a8a; color:#fff; padding:15px 8%; display:flex; justify-content:space-between; align-items:center; position:relative;
+  flex-wrap:wrap;
+}
+.logo-area {display:flex; align-items:center; gap:10px;}
+.logo-area img {height:40px; border-radius:6px;}
+.logo-text span {display:block; font-weight:700;}
+
+/* NAV MENU BUTTON */
+.nav-btn {
+  background:#fff; color:#1e3a8a; border:none; padding:8px 15px; border-radius:6px; cursor:pointer; font-weight:700; transition:0.3s;
+}
+.nav-btn:hover {background:#e2e8f0;}
+
+/* DROPDOWN MENU */
+.dropdown {
+  display:none; position:absolute; right:20px; top:70px; background:#fff; box-shadow:0 15px 35px rgba(0,0,0,0.15); border-radius:10px; overflow:hidden; z-index:100;
+}
+.dropdown a {
+  display:block; padding:12px 20px; text-decoration:none; color:#1e3a8a; font-weight:600; transition:0.3s;
+}
+.dropdown a:hover {background:#f1f5f9;}
+
+/* HERO SECTION */
+.hero {
+  padding:70px 8%; text-align:center; background:linear-gradient(to right,#1e3a8a,#3b82f6); color:#fff; border-radius:20px;
+}
+.hero h1 {font-size:36px; margin-bottom:10px; letter-spacing:1px;}
+.hero p {opacity:0.9; font-size:16px;}
+
+/* SERVICES CARDS */
+.container {padding:60px 8%; max-width:1200px; margin:auto;}
+.grid {display:grid; grid-template-columns:repeat(auto-fit,minmax(260px,1fr)); gap:30px;}
+
+/* CARD DESIGN WITH 3D EFFECT */
+.card {
+  background:#fff; padding:25px; border-radius:20px; box-shadow:0 15px 35px rgba(0,0,0,0.08); transition:0.4s;
+  transform-style: preserve-3d; cursor:pointer;
+}
+.card:hover {
+  transform:translateY(-8px) rotateX(3deg) rotateY(-3deg);
+  box-shadow:0 25px 50px rgba(0,0,0,0.15);
+}
+.card h3 {color:#1e3a8a; margin-bottom:15px; font-size:22px; display:flex; align-items:center; gap:10px;}
+.card p {opacity:0.85; margin-bottom:15px; line-height:1.7; font-size:15px;}
+.card ul {list-style:disc; padding-left:22px; margin-bottom:20px;}
+.card ul li {margin-bottom:8px; font-size:14px; display:flex; align-items:center;}
+.card ul li::before {
+  content:"✔"; color:#22c55e; font-weight:bold; margin-right:8px;
+}
+.card button {
+  width:100%; padding:12px; border:none; background:linear-gradient(135deg,#1e3a8a,#3b82f6);
+  color:#fff; border-radius:12px; font-weight:700; font-size:15px; cursor:pointer; transition:0.3s;
+}
+.card button:hover {transform:translateY(-2px); background:linear-gradient(135deg,#22c55e,#16a34a);}
+
+/* ICON PLACEHOLDERS */
+.card h3::before {
+  content:"🔹"; font-size:18px; margin-right:8px;
+}
+
+/* FOOTER */
+footer {background:#1e3a8a; color:#fff; text-align:center; padding:25px; margin-top:40px; font-size:14px; border-radius:0 0 20px 20px;}
+
+/* MOBILE RESPONSIVE */
+@media(max-width:768px){
+  .hero h1 {font-size:28px;}
+  .hero p {font-size:15px;}
+  .grid {grid-template-columns:1fr; gap:25px;}
+  .card {padding:20px;}
+  .card h3 {font-size:20px;}
+}
+</style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <div class="logo-area">
+    <img src="./asset/image/Miracle Fx Logo.png" alt="logo">
+    <div class="logo-text">
+      <span>Miracle Fx</span>
+      <span>Academy</span>
+    </div>
+  </div>
+
+  <button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
+
+  <div class="dropdown" id="menu">
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="testimonials.html">Testimonials</a>
+    <a href="plans.html">Plans</a>
+    <a href="contact.html">Contact</a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <h1>Our Forex Services</h1>
+  <p>We provide everything you need to become a consistently profitable trader.</p>
+</section>
+
+<!-- SERVICES CARDS -->
+<div class="container">
+  <div class="grid">
+
+    <div class="card">
+      <h3>Forex Mentorship</h3>
+      <p>Get guided step-by-step training from beginner to advanced level with structured learning.</p>
+      <ul>
+        <li>Beginner to advanced training</li>
+        <li>Step-by-step guidance</li>
+        <li>Live mentorship sessions</li>
+        <li>Private community access</li>
+      </ul>
+      <button onclick="location.href='plans.html?plan=mentorship'">Get Started</button>
+    </div>
+
+  
+    <div class="card">
+      <h3>Advanced Strategies</h3>
+      <p>Learn institutional-level strategies used by professional traders in the market.</p>
+      <ul>
+        <li>Market structure mastery</li>
+        <li>Liquidity concepts</li>
+        <li>Smart money strategies</li>
+        <li>Full trading system</li>
+      </ul>
+      <button onclick="location.href='plans.html?plan=advanced'">Learn More</button>
+    </div>
+
+    <div class="card">
+      <h3>1-on-1 Coaching</h3>
+      <p>Personalized mentorship tailored to your trading goals and weaknesses.</p>
+      <ul>
+        <li>Direct coaching sessions</li>
+        <li>Trade review & feedback</li>
+        <li>Custom strategy plan</li>
+        <li>Faster growth</li>
+      </ul>
+      <button onclick="location.href='plans.html?plan=coaching'">Apply Now</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>© 2026 Miracle Fx Academy. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  const menu = document.getElementById("menu");
+  menu.style.display = menu.style.display === "block" ? "none" : "block";
+}
+</script>
+
+</body>
+</html>
