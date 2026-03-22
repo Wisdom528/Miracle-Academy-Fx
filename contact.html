@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact Us | Miracle Fx Academy</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+/* GLOBAL STYLES */
+* {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+body {background:#f5f7fb;color:#0f172a;line-height:1.6;}
+a {text-decoration:none;color:inherit;}
+
+/* HEADER */
+header {
+  display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:#1e3a8a;color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+header .logo-area {display:flex;align-items:center;gap:10px;}
+header .logo-area img {height:40px;border-radius:6px;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
+header .logo-text span {display:block;font-weight:700;font-size:18px;}
+.nav-btn {background:#fff;color:#1e3a8a;padding:8px 16px;border:none;border-radius:6px;cursor:pointer;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,0.2);}
+.nav-btn:hover {background:#e2e8f0;}
+.dropdown {display:none;position:absolute;right:8%;top:60px;background:#fff;border-radius:10px;box-shadow:0 15px 35px rgba(0,0,0,0.2);overflow:hidden;min-width:200px;z-index:1000;}
+.dropdown a {display:block;padding:12px 20px;font-weight:600;color:#1e3a8a;}
+.dropdown a:hover {background:#f1f5f9;}
+.show {display:block;}
+
+/* PAGE HEADER */
+.page-header {text-align:center;padding:60px 20px;background:linear-gradient(90deg,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;margin:20px 8%;box-shadow:0 15px 40px rgba(0,0,0,0.2);}
+.page-header h1 {font-size:36px;margin-bottom:15px;}
+.page-header p {font-size:18px;opacity:0.9;}
+
+/* CONTACT CONTAINER */
+.contact-container {display:grid;grid-template-columns:1fr 1fr;gap:40px;max-width:1200px;margin:50px auto;padding:0 20px;}
+.contact-info, .contact-form {background:#fff;border-radius:20px;padding:30px;box-shadow:0 15px 40px rgba(0,0,0,0.1);}
+
+/* CONTACT INFO CARDS */
+.contact-info h2 {color:#1e3a8a;font-size:28px;margin-bottom:20px;}
+.info-card {display:flex;align-items:center;gap:15px;padding:15px 20px;border-radius:12px;margin-bottom:15px;background:#f1f5f9;transition:0.3s;cursor:pointer;}
+.info-card:hover {background:#e0e7ff;transform:translateY(-3px);}
+.info-card i {font-size:22px;color:#1e3a8a;}
+.info-card span {font-size:16px;font-weight:500;}
+
+/* CONTACT FORM */
+.contact-form h2 {color:#1e3a8a;font-size:28px;margin-bottom:20px;text-align:center;}
+.contact-form form {display:flex;flex-direction:column;gap:15px;}
+.contact-form input, .contact-form textarea {padding:12px 15px;border-radius:12px;border:1px solid #e2e8f0;font-size:15px;transition:0.3s;}
+.contact-form input:focus, .contact-form textarea:focus {outline:none;border-color:#3b82f6;box-shadow:0 5px 15px rgba(59,130,246,0.2);}
+.contact-form button {padding:14px;background:linear-gradient(135deg,#1e3a8a,#3b82f6);color:#fff;border:none;border-radius:12px;font-weight:700;font-size:16px;cursor:pointer;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.15);}
+.contact-form button:hover {transform:translateY(-3px);box-shadow:0 8px 25px rgba(0,0,0,0.2);}
+
+/* FOOTER */
+footer {background:#1e3a8a;color:#fff;text-align:center;padding:25px;margin-top:50px;font-size:14px;border-radius:0 0 20px 20px;}
+
+/* RESPONSIVE */
+@media(max-width:992px){.contact-container {grid-template-columns:1fr;gap:25px;}}
+</style>
+<!-- FontAwesome for icons -->
+<script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+</head>
+<body>
+
+<header>
+<div class="logo-area">
+<img src="./asset/image/Miracle Fx Logo.png" alt="logo">
+<div class="logo-text">
+<span>Miracle Fx</span>
+<span>Academy</span>
+</div>
+</div>
+<button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
+<div class="dropdown" id="menu">
+<a href="index.html">Home</a>
+<a href="about.html">About</a>
+<a href="trading-programs.html">Trading Programs</a>
+<a href="#contact">Contact</a>
+</div>
+</header>
+
+<section class="page-header">
+<h1>Contact Us</h1>
+<p>Have a question or need support? Reach out to us anytime!</p>
+</section>
+
+<section class="contact-container">
+<!-- CONTACT INFO -->
+<div class="contact-info">
+<h2>Get in Touch</h2>
+<div class="info-card" onclick="window.open('https://wa.me/2349065171696','_blank')">
+<i class="fab fa-whatsapp"></i><span>+2349065171696 (WhatsApp)</span>
+</div>
+<div class="info-card" onclick="window.open('mailto:info@miraclefxacademy.com','_blank')">
+<i class="fas fa-envelope"></i><span>info@miraclefxacademy.com</span>
+</div>
+<div class="info-card" onclick="window.open('https://instagram.com/YOUR_USERNAME','_blank')">
+<i class="fab fa-instagram"></i><span>@miraclefxacademy</span>
+</div>
+</div>
+
+<!-- CONTACT FORM -->
+<div class="contact-form">
+<h2>Send Us a Message</h2>
+<form id="contactForm">
+<input type="text" name="name" placeholder="Your Name" required>
+<input type="email" name="email" placeholder="Your Email" required>
+<textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+<button type="submit">Send Message</button>
+</form>
+</div>
+</section>
+
+<footer>
+<p>© 2026 Wise Tech. All rights reserved.</p>
+</footer>
+
+<script>
+function toggleMenu(){
+  document.getElementById("menu").classList.toggle("show");
+}
+
+// Simple form submission
+document.getElementById('contactForm').addEventListener('submit', function(e){
+  e.preventDefault();
+  const name = this.name.value;
+  const email = this.email.value;
+  const message = this.message.value;
+  const whatsapp = '+2349065171696';
+  const text = `Hello Coach, I am ${name} (${email}). My message: ${message}`;
+  const url = `https://wa.me/${whatsapp.replace(/\+/g,'')}?text=${encodeURIComponent(text)}`;
+  window.open(url,'_blank');
+});
+</script>
+
+</body>
+</html>
