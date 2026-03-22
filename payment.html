@@ -141,7 +141,7 @@ const countdown = setInterval(()=>{
 // Payment confirmation -> open WhatsApp with pre-filled message
 function confirmPayment(){
   if(plan && plans[plan]){
-    const phone = "+2349065171696"; // Your WhatsApp number
+    const phone = "+2349070629367"; // Your WhatsApp number
     const text = `Hello Coach, I have made payment for the ${plans[plan].name} ($${plans[plan].price}).`;
     const url = `https://wa.me/${phone.replace(/\+/g,'')}?text=${encodeURIComponent(text)}`;
     window.open(url, '_blank');

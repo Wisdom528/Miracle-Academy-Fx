@@ -5,92 +5,174 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Forex Mastery Hub | Miracle Fx Academy</title>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <style>
-/* GLOBAL STYLES */
 * {margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
-body {background: #f5f7fb;color: #0f172a;line-height: 1.6;}
-a {text-decoration:none;color: inherit;}
-button {outline:none;}
+body {background:#f5f7fb;color:#0f172a;line-height:1.6;}
+a {text-decoration:none;color:inherit;}
+button {outline:none;cursor:pointer;}
 
 /* HEADER */
-header {display:flex;justify-content:space-between;align-items:center;padding:15px 8%;background:#1e3a8a;color:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 5px 15px rgba(0,0,0,0.1);}
+header {
+  display:flex;justify-content:space-between;align-items:center;
+  padding:15px 8%;background:#1e3a8a;color:#fff;
+  position:sticky;top:0;z-index:1000;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
 .logo-area {display:flex;align-items:center;gap:10px;}
-.logo-area img {height:42px; border-radius:6px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);}
+.logo-area img {height:42px;border-radius:6px;box-shadow:0 5px 15px rgba(0,0,0,0.2);}
 .logo-text span {display:block;font-weight:700;font-size:18px;}
 nav {position:relative;}
-.nav-btn {background:#fff;color:#1e3a8a;padding:8px 15px;border:none;border-radius:6px;cursor:pointer;font-weight:700;box-shadow:0 3px 10px rgba(0,0,0,0.2);}
-.dropdown {display:none;position:absolute;right:0;background:#fff;border-radius:10px;box-shadow:0 15px 35px rgba(0,0,0,0.2);overflow:hidden;min-width:200px;}
-.dropdown a {display:block;padding:12px 20px;font-weight:600;color:#1e3a8a;}
+
+.nav-btn {
+  background:#fff;color:#1e3a8a;padding:8px 15px;
+  border:none;border-radius:6px;font-weight:700;
+  box-shadow:0 3px 10px rgba(0,0,0,0.2);
+}
+
+/* SMOOTH DROPDOWN */
+.dropdown {
+  position:absolute;
+  right:0;
+  top:60px;
+  background:#fff;
+  border-radius:10px;
+  box-shadow:0 15px 35px rgba(0,0,0,0.2);
+  overflow:hidden;
+  min-width:200px;
+
+  opacity:0;
+  transform:translateY(-10px);
+  pointer-events:none;
+  transition:opacity 0.2s ease, transform 0.2s ease;
+}
+.dropdown a {
+  display:block;padding:12px 20px;
+  font-weight:600;color:#1e3a8a;
+}
 .dropdown a:hover {background:#f1f5f9;}
-.show {display:block;}
+.dropdown.show {
+  opacity:1;
+  transform:translateY(0);
+  pointer-events:auto;
+}
 
 /* HERO */
-.hero {padding:80px 8%;text-align:center;background:linear-gradient(to right,#1e3a8a,#3b82f6);color:#fff;border-radius:20px;margin:20px 8%;box-shadow:0 15px 40px rgba(0,0,0,0.2);}
-.hero h2 {font-size:40px;margin-bottom:20px;text-shadow:0 3px 10px rgba(0,0,0,0.2);}
-.hero p {opacity:0.9;margin-bottom:30px;font-size:18px;}
-.hero button {padding:14px 28px;background:#fff;color:#1e3a8a;border:none;border-radius:10px;font-weight:700;cursor:pointer;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.15);}
-.hero button:hover {transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.25);}
-.hero video {width:100%;max-height:400px;object-fit:cover;border-radius:12px;margin-top:30px;pointer-events:none;box-shadow:0 10px 30px rgba(0,0,0,0.2);}
+.hero {
+  padding:80px 8%;text-align:center;
+  background:linear-gradient(to right,#1e3a8a,#3b82f6);
+  color:#fff;border-radius:20px;margin:20px 8%;
+}
+.hero h2 {font-size:40px;margin-bottom:20px;}
+.hero p {margin-bottom:30px;font-size:18px;}
+.hero button {
+  padding:14px 28px;background:#fff;color:#1e3a8a;
+  border:none;border-radius:10px;font-weight:700;
+}
+.hero video {
+  width:100%;max-height:400px;object-fit:cover;
+  border-radius:12px;margin-top:30px;
+}
 
-/* INTRO TEXT */
-.intro {max-width:800px;margin:30px auto 0 auto;font-size:17px;line-height:1.8;color:#f1f5f9;opacity:0.95;}
+/* VALUE */
+.value {
+  padding:60px 8%;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+  gap:25px;
+}
+.value-box {
+  background:#fff;padding:30px;border-radius:20px;
+  text-align:center;
+  box-shadow:0 20px 40px rgba(0,0,0,0.15);
+}
+.value-box h3 {color:#1e3a8a;margin-bottom:15px;}
 
-/* VALUE CARDS 3D */
-.value {padding:60px 8%;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:25px;}
-.value-box {background:#fff;padding:30px;border-radius:20px;text-align:center;box-shadow:0 20px 40px rgba(0,0,0,0.15);transition:transform 0.5s, box-shadow 0.5s;transform-style: preserve-3d;cursor:pointer;}
-.value-box h3 {color:#1e3a8a;margin-bottom:15px;font-size:22px;}
-.value-box p {opacity:0.8;font-size:16px;}
-.value-box:hover {transform: rotateX(5deg) rotateY(-5deg) translateY(-10px);box-shadow:0 35px 60px rgba(0,0,0,0.25);}
-
-/* TRADING PROGRAM CARDS */
+/* PROGRAMS */
 .section {padding:60px 8%;}
-.section-title {font-size:32px;font-weight:700;text-align:center;margin-bottom:50px;color:#1e3a8a;letter-spacing:1px;}
-.cards {display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px;}
-.card {background:#fff;border-radius:20px;overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,0.1);transition:0.5s;display:flex;flex-direction:column;justify-content:flex-start;}
-.card:hover {transform:translateY(-10px);box-shadow:0 30px 60px rgba(0,0,0,0.2);}
-.card-header {background:linear-gradient(to right,#1e3a8a,#3b82f6);color:#fff;padding:20px 30px;text-align:center;display:flex;justify-content:space-between;align-items:center;}
-.card-header h3 {margin:0;font-size:22px;font-weight:700;}
-.card-header .price {font-size:22px;font-weight:700;color:#22c55e;}
-.card-body {padding:30px;text-align:center;}
-.card-body p {margin-bottom:20px;color:#475569;font-size:16px;}
-.features {list-style:none;margin:20px 0;text-align:left;padding-left:0;}
-.features li {margin-bottom:10px;padding-left:28px;position:relative;font-size:15px;}
-.features li::before {content:"✔";position:absolute;left:0;color:#1e3a8a;font-weight:bold;font-size:16px;}
-.card button {width:100%;padding:14px;border:none;background:#1e3a8a;color:#fff;border-radius:10px;cursor:pointer;font-weight:700;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.15);}
-.card button:hover {background:#2563eb;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.2);}
+.section-title {
+  text-align:center;
+  margin-bottom:50px;
+  color:#1e3a8a;
+}
+.cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+.card {
+  background:#fff;border-radius:20px;
+  box-shadow:0 20px 40px rgba(0,0,0,0.1);
+  overflow:hidden;
+}
+.card img {
+  width:100%;
+  height:180px;
+  object-fit:cover;
+}
+.card-header {
+  background:#1e3a8a;color:#fff;
+  padding:20px;
+  display:flex;justify-content:space-between;
+}
+.card-body {padding:25px;}
+.card-body p {margin-bottom:15px;}
+
+.features {
+  list-style:none;
+  margin:15px 0;
+}
+.features li {
+  margin-bottom:8px;
+  padding-left:20px;
+  position:relative;
+  font-size:14px;
+}
+.features li::before {
+  content:"✔";
+  position:absolute;
+  left:0;
+  color:#1e3a8a;
+}
+
+.card button {
+  width:100%;
+  padding:12px;
+  background:#1e3a8a;color:#fff;
+  border:none;border-radius:10px;
+}
 
 /* CONTACT */
-.contact {background:#020617;color:#fff;text-align:center;padding:60px 20px;border-radius:20px;margin:40px 8%;box-shadow:0 15px 40px rgba(0,0,0,0.4);}
-.contact h2 {margin-bottom:15px;font-size:26px;}
-.contact p {opacity:0.85;margin-bottom:25px;font-size:16px;}
-.contact a {display:inline-block;margin:10px;padding:14px 25px;border-radius:10px;background:#1e3a8a;color:#fff;text-decoration:none;font-weight:600;transition:0.3s;box-shadow:0 5px 15px rgba(0,0,0,0.15);}
-.contact a:hover {background:#3b82f6;transform:translateY(-3px);box-shadow:0 8px 20px rgba(0,0,0,0.25);}
+.contact {
+  background:#020617;color:#fff;
+  text-align:center;padding:60px;
+  border-radius:20px;margin:40px 8%;
+}
 
 /* FOOTER */
-footer {text-align:center;padding:25px;background:#1e3a8a;color:#fff;font-size:14px;box-shadow:0 -5px 15px rgba(0,0,0,0.1);}
-
-/* RESPONSIVE */
-@media(max-width:768px){
-.hero h2 {font-size:28px;}
-.hero video {max-height:250px;}
-.cards {grid-template-columns:1fr;}
-.value {grid-template-columns:1fr;}
-.intro {font-size:16px;}
+footer {
+  text-align:center;
+  padding:20px;
+  background:#1e3a8a;
+  color:#fff;
 }
 </style>
 </head>
+
 <body>
 
 <header>
 <div class="logo-area">
-<img src="./asset/image/Miracle Fx Logo.png" alt="logo">
+<img src="./asset/image/Miracle Fx Logo.png">
 <div class="logo-text">
 <span>Miracle Fx</span>
 <span>Academy</span>
 </div>
 </div>
+
 <nav>
 <button class="nav-btn" onclick="toggleMenu()">Menu ☰</button>
+
 <div class="dropdown" id="menu">
 <a href="#home">Home</a>
 <a href="about.html">About</a>
@@ -106,10 +188,8 @@ footer {text-align:center;padding:25px;background:#1e3a8a;color:#fff;font-size:1
 <h2>Master Forex Trading Like A Pro</h2>
 <p>Learn How To Trade The Forex Market And Start Making Consistent Profits.</p>
 <button onclick="document.getElementById('plans').scrollIntoView()">Get Started</button>
-<div class="intro">
-At Miracle Fx Academy, We Provide Structured Forex Education Designed To Help You Understand The Market, Manage Risk Effectively, And Build Consistent Trading Strategies.
-</div>
-<video autoplay muted loop playsinline>
+
+<video autoplay muted loop>
 <source src="./asset/video/Miracle Fx.mp4" type="video/mp4">
 </video>
 </section>
@@ -117,74 +197,74 @@ At Miracle Fx Academy, We Provide Structured Forex Education Designed To Help Yo
 <section class="value">
 <div class="value-box">
 <h3>Proven Strategies</h3>
-<p>Learn tested and reliable trading methods used by consistent traders.</p>
+<p>Learn tested and reliable</p>
+<p>trading methods used by</p>
+<P>consistent traders.</P>
 </div>
 <div class="value-box">
 <h3>Mentorship</h3>
-<p>Get guidance and support to accelerate your Forex journey.</p>
+<p>Get guidance and support to</p>
+<p>accelerate your Forex journey.</p>
 </div>
 <div class="value-box">
 <h3>Real Results</h3>
-<p>Focus on practical knowledge that delivers measurable outcomes.</p>
+<p>Focus on practical knowledge</p>
+<p>that delivers measurable</p>
+<p>outcomes</p>
 </div>
 </section>
 
 <section class="section" id="plans">
 <h2 class="section-title">Our Trading Programs</h2>
+
 <div class="cards">
 
-<!-- BEGINNER -->
 <div class="card">
-<img src="./asset/image/Miracle Fx beginner.png" alt="Beginner">
+<img src="./asset/image/Miracle Fx beginner.png">
 <div class="card-header">
-<h3>Beginner</h3>
-<div class="price">$50</div>
+<h3>Beginner</h3><span>$50</span>
 </div>
 <div class="card-body">
-<p>Start your Forex journey with a solid foundation designed for complete beginners.</p>
+<p>Start your Forex journey with a solid foundation.</p>
 <ul class="features">
 <li>Introduction to Forex market</li>
 <li>Basic trading strategies</li>
-<li>Risk management fundamentals</li>
-<li>Access to beginner community</li>
+<li>Risk management</li>
+<li>Beginner community</li>
 </ul>
 <button onclick="goToPayment('beginner','$50')">Register</button>
 </div>
 </div>
 
-<!-- INTERMEDIATE -->
 <div class="card">
-<img src="./asset/image/Miracle Fx Intermediate.png" alt="Intermediate">
+<img src="./asset/image/Miracle Fx Intermediate.png">
 <div class="card-header">
-<h3>Intermediate</h3>
-<div class="price">$100</div>
+<h3>Intermediate</h3><span>$100</span>
 </div>
 <div class="card-body">
-<p>Upgrade your skills with proven strategies used by consistent traders.</p>
+<p>Upgrade your trading with proven strategies.</p>
 <ul class="features">
-<li>Advanced trading setups</li>
-<li>Market structure analysis</li>
-<li>Live trading sessions</li>
-<li>Private mentorship group</li>
+<li>Advanced setups</li>
+<li>Market structure</li>
+<li>Live sessions</li>
+<li>Mentorship group</li>
 </ul>
 <button onclick="goToPayment('intermediate','$100')">Register</button>
 </div>
 </div>
 
-<!-- ADVANCED -->
 <div class="card">
-<img src="./asset/image/Miracle Fx Advance.png" alt="Advanced">
+<img src="./asset/image/Miracle Fx Advance.png">
 <div class="card-header">
-<h3>Advanced</h3>
-<div class="price">$200</div>
+<h3>Advanced</h3><span>$200</span>
 </div>
 <div class="card-body">
-<p>Master Forex trading with elite-level strategies and mentorship.</p>
+<p>Master Forex trading at a professional level.</p>
 <ul class="features">
-<li>Institutional trading strategies</li>
+<li>Institutional strategies</li>
 <li>1-on-1 mentorship</li>
-<li>Premium signals access</li>
-<li>Full trading system breakdown</li>
+<li>Premium signals</li>
+<li>Full system</li>
 </ul>
 <button onclick="goToPayment('advanced','$200')">Register</button>
 </div>
@@ -195,19 +275,27 @@ At Miracle Fx Academy, We Provide Structured Forex Education Designed To Help Yo
 
 <section class="contact" id="contact">
 <h2>Contact Us</h2>
-<p>Reach out and start your journey today</p>
-
-<a href="https://wa.me/2349065171696" target="_blank">WhatsApp</a>
+<p>Reach out and start your journey</p>
+<a href="https://wa.me/2349070629367" target="_blank">WhatsApp</a>
 </section>
 
 <footer>
-<p>© 2026 Wise Tech. All rights reserved.</p>
+<p>© 2026 Wise Tech</p>
 </footer>
 
 <script>
+const menu = document.getElementById("menu");
+
 function toggleMenu(){
- document.getElementById("menu").classList.toggle("show");
+  menu.classList.toggle("show");
 }
+
+document.addEventListener("click",(e)=>{
+  if(!e.target.closest(".nav-btn") && !e.target.closest(".dropdown")){
+    menu.classList.remove("show");
+  }
+});
+
 function goToPayment(plan, price){
   window.location.href = `payment.html?plan=${plan}&price=${encodeURIComponent(price)}`;
 }
